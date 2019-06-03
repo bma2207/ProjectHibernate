@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+
+repositories {
+   
+    jcenter()
+}
+
+
+dependencies {
+    
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    testCompile 'junit:junit:4.12'
+	
+  // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.25'
+
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    testCompile 'junit:junit:4.12'
+    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.1.4.Final'
+
+   // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxb-provider
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxb-provider', version: '3.6.1.Final'
+
+// This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:27.0.1-jre'
+
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+	
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.0.Final'
+}
