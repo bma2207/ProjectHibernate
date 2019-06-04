@@ -1,8 +1,6 @@
 package com.project.bean;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.project.controler.LoginBean;
 import com.project.controler.LoginDao;
 
-
 @WebServlet("/login")
 public class LoginControler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,16 +18,17 @@ public class LoginControler extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	
-		
-		
 		String nuser = request.getParameter("email");
 		String pwd = request.getParameter("password");
 		
-	
-		
 		try {
 			LoginDao loginDao=new LoginDao();
-			loginDao.addUser(nuser,pwd);
+			LoginBean loginbean=new LoginBean();
+			 
+			  loginbean.setUsers(nuser);
+			  loginbean.setPassword(pwd);
+			  
+			  loginDao.addUser(loginbean);
 			
 		} catch (Exception e) {
 			// TODO: handle exception

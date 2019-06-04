@@ -5,14 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "LoginBean")
 public class LoginBean {
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int lid;
-	private String user;
+	private String users;
 	private String password;
 	
 	public int getLid() {
@@ -21,11 +20,11 @@ public class LoginBean {
 	public void setLid(int lid) {
 		this.lid = lid;
 	}
-	public String getUser() {
-		return user;
+	public String getUsers() {
+		return users;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsers(String users) {
+		this.users = users;
 	}
 	public String getPassword() {
 		return password;
@@ -35,6 +34,6 @@ public class LoginBean {
 	}
 	@Override
 	public String toString() {
-		return "Loginmodul [lid=" + lid + ", user=" + user + ", password=" + password + "]";
+		return "Loginmodul [lid=" + lid + ", users=" + users + ", password=" + password + "]";
 	}
 }

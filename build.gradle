@@ -32,4 +32,8 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
 compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.0.Final'
+
+// https://mvnrepository.com/artifact/com.google.inject/guice
+	compile group: 'com.google.inject', name: 'guice', version: '4.0'
+	
 }
