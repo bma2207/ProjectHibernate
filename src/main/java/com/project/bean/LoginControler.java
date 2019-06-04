@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.inject.Inject;
 import com.project.controler.LoginBean;
 import com.project.controler.LoginDao;
+import com.project.service.LoginService;
 
 @WebServlet("/login")
 public class LoginControler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+    @Inject LoginService loginService;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -29,6 +32,7 @@ public class LoginControler extends HttpServlet {
 			  loginbean.setPassword(pwd);
 			  
 			  loginDao.addUser(loginbean);
+			  
 			
 		} catch (Exception e) {
 			// TODO: handle exception

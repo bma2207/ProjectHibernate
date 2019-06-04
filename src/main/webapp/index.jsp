@@ -11,6 +11,7 @@
 Email:<input type="text" name="email"/><br/><br/>  
 Password:<input type="password" name="password"/><br/><br/>  
 <input type="submit" value="login"/> 
+<a href="ListOfUser.jsp">go</a>
 </form>  
 </body>
 </html>
